@@ -5,3 +5,22 @@ se tiver entre 14 e menor que 18 adolescente,
 se tiver entre 18 e 59 é adulto,
 
 acima de 60 é idoso
+
+
+# Recebe o nome e a idade do usuário
+nome = input("Digite seu nome: ")
+idade = int(input("Digite sua idade: "))
+
+# Classifica a pessoa com base na idade
+if idade <= 13:
+    classificacao = "criança"
+elif 14 <= idade < 18:
+    classificacao = "adolescente"
+elif 18 <= idade <= 59:
+    classificacao = "adulto"
+else:
+    classificacao = "idoso"
+
+# Imprime a classificação
+print(f"{nome}, você é {classificacao}.")
+  
