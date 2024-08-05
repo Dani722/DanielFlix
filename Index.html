@@ -1,27 +1,17 @@
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate,logout
+Listas:
 
-def register_view(request):
-  if request.method == 'POST':
-    username = UserCreationForm(request.POST)
-    if username.is_valid():
-      username.save()
-      return redirect('login')
-    else:
-      user_form = UserCreationForm()
-      return render(request, 'register.html',{'user_form':user_form}')
+listas de compras, lista de produtos, lista de filmes.
 
-def login_view(request):
-  if request.method == 'POST':
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(request,username=username,password=password)
-    if user is not None:
-      login(request,user)
-      return redirect('car_list')
-    else:
-      login_form = AuthenticationForm()
-  else:
-    login_form = AuthenticationForm()
-    return render(request, 'login.html',{'login_form':login_form})
+Organizaria colocando os itens por ordem de importância, como essencial, opcional e fútil.
+
+Filas:
+
+fila de pessoas, fila de carros, fila de cadeiras.
+
+Organizaria colocando uma pessoa atrás da outra, com preferência aos idosos na frente.
+
+Pilhas:
+
+pilha de pratos, pilha de livros, pilha de cadeiras.
+
+Organizaria colocando um prato em cima do outro, tentando fazer sempre uma pilha mediana pra evitar risco de ficar torta, desequilibrar ou cair.
